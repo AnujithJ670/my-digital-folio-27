@@ -3,49 +3,92 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import profileImage from "@/assets/profile.jpg";
+import Navigation from "@/components/Navigation";
+import ContactForm from "@/components/ContactForm";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
+const AnimatedSection = ({ children, id, className = "" }: { children: React.ReactNode; id?: string; className?: string }) => {
+  const { ref, isVisible } = useScrollAnimation();
+  return (
+    <section
+      ref={ref as React.RefObject<HTMLElement>}
+      id={id}
+      className={`${className} ${isVisible ? 'fade-in-up' : 'opacity-0'}`}
+    >
+      {children}
+    </section>
+  );
+};
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Navigation />
+      
       {/* Hero Section */}
-      <section className="gradient-hero py-20 px-4 text-primary-foreground">
+      <section className="gradient-hero py-32 px-4 text-primary-foreground mt-16">
         <div className="container mx-auto max-w-4xl">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
             <img 
               src={profileImage} 
-              alt="Anujith J Nair" 
-              className="w-40 h-40 rounded-full object-cover border-4 border-primary-foreground shadow-lg"
+              alt="Anujith J Nair - Java Full Stack Developer" 
+              className="w-48 h-48 rounded-full object-cover border-4 border-primary-foreground shadow-2xl bounce-in"
             />
             <div className="text-center md:text-left">
-              <h1 className="text-5xl md:text-6xl font-bold mb-4 animate-fade-in">
+              <h1 className="text-5xl md:text-6xl font-bold mb-4 slide-in-right">
                 Anujith J Nair
               </h1>
-              <p className="text-xl md:text-2xl opacity-90">
+              <p className="text-xl md:text-2xl opacity-90 slide-in-right stagger-1">
                 Java Full Stack Developer
               </p>
             </div>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 slide-in-up stagger-2">
+            <Button variant="secondary" size="lg" asChild className="hover-scale">
+              <a href="tel:+919538141670" className="flex items-center gap-2">
+                <Phone className="h-4 w-4" />
+                +91 9538141670
+              </a>
+            </Button>
+            <Button variant="secondary" size="lg" asChild className="hover-scale">
+              <a href="mailto:anujithsaec@gmail.com" className="flex items-center gap-2">
+                <Mail className="h-4 w-4" />
+                Email Me
+              </a>
+            </Button>
+            <Button variant="secondary" size="lg" asChild className="hover-scale">
+              <a 
+                href="https://www.linkedin.com/in/anujith-j-nair-b857a0282/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Linkedin className="h-4 w-4" />
+                LinkedIn
+              </a>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-16 px-4">
+      <AnimatedSection id="about" className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold mb-6 text-center">About Me</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto">
             Passionate Java Full Stack Developer Trainee with hands-on experience in Java, SQL, React, JDBC, J2EE, and Spring Core. 
             Developed projects including a Student Management App and Spotify Clone, demonstrating effective integration of front-end 
             and back-end technologies. 5 Star HackerRank in DSA. Eager to apply skills in real-world software development and innovation.
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Experience Section */}
-      <section className="section-alt py-16 px-4">
+      <AnimatedSection id="experience" className="section-alt py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold mb-8 text-center">Experience</h2>
           <div className="space-y-6">
-            <Card>
+            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                   <div>
@@ -64,7 +107,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                   <div>
@@ -81,7 +124,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                   <div>
@@ -100,14 +143,14 @@ const Index = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Projects Section */}
-      <section className="py-16 px-4">
+      <AnimatedSection id="projects" className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardHeader>
                 <CardTitle>Student Application</CardTitle>
                 <CardDescription>Sep 2025</CardDescription>
@@ -128,7 +171,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardHeader>
                 <CardTitle>Simple Spotify Clone</CardTitle>
                 <CardDescription>Oct 2025</CardDescription>
@@ -146,14 +189,14 @@ const Index = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Education Section */}
-      <section className="section-alt py-16 px-4">
+      <AnimatedSection id="education" className="section-alt py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
           <div className="space-y-6">
-            <Card>
+            <Card className="hover:shadow-lg transition-all duration-300">
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                   <div>
@@ -165,7 +208,7 @@ const Index = () => {
               </CardHeader>
             </Card>
 
-            <Card>
+            <Card className="hover:shadow-lg transition-all duration-300">
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                   <div>
@@ -178,88 +221,98 @@ const Index = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Skills Section */}
-      <section className="py-16 px-4">
+      <AnimatedSection id="skills" className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold mb-8 text-center">Technical Skills</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl font-semibold mb-4">Languages</h3>
               <div className="flex flex-wrap gap-2">
-                <Badge variant="outline">Java</Badge>
-                <Badge variant="outline">SQL</Badge>
-                <Badge variant="outline">JavaScript</Badge>
-                <Badge variant="outline">HTML/CSS</Badge>
-                <Badge variant="outline">J2EE</Badge>
-                <Badge variant="outline">JSP</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">Java</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">SQL</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">JavaScript</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">HTML/CSS</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">J2EE</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">JSP</Badge>
               </div>
             </div>
 
             <div>
               <h3 className="text-xl font-semibold mb-4">Frameworks</h3>
               <div className="flex flex-wrap gap-2">
-                <Badge variant="outline">React.js</Badge>
-                <Badge variant="outline">Spring Core</Badge>
-                <Badge variant="outline">JDBC API</Badge>
-                <Badge variant="outline">Bootstrap</Badge>
-                <Badge variant="outline">Tailwind CSS</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">React.js</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">Spring Core</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">JDBC API</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">Bootstrap</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">Tailwind CSS</Badge>
               </div>
             </div>
 
             <div>
               <h3 className="text-xl font-semibold mb-4">Developer Tools</h3>
               <div className="flex flex-wrap gap-2">
-                <Badge variant="outline">Git</Badge>
-                <Badge variant="outline">VS Code</Badge>
-                <Badge variant="outline">Visual Studio</Badge>
-                <Badge variant="outline">PyCharm</Badge>
-                <Badge variant="outline">IntelliJ</Badge>
-                <Badge variant="outline">Eclipse</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">Git</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">VS Code</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">Visual Studio</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">PyCharm</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">IntelliJ</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">Eclipse</Badge>
               </div>
             </div>
 
             <div>
               <h3 className="text-xl font-semibold mb-4">Soft Skills</h3>
               <div className="flex flex-wrap gap-2">
-                <Badge variant="outline">Passionate</Badge>
-                <Badge variant="outline">Team Lead</Badge>
-                <Badge variant="outline">Public Speaker</Badge>
-                <Badge variant="outline">Social</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">Passionate</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">Team Lead</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">Public Speaker</Badge>
+                <Badge variant="outline" className="hover:scale-110 transition-transform">Social</Badge>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
+
+      {/* Contact Section */}
+      <AnimatedSection id="contact" className="section-alt py-16 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <ContactForm />
+        </div>
+      </AnimatedSection>
 
       {/* Footer */}
-      <footer className="gradient-hero py-8 px-4 text-primary-foreground">
-        <div className="container mx-auto max-w-4xl text-center">
-          <p className="mb-4">Let's connect and build something amazing together!</p>
-          <div className="flex justify-center gap-4">
-            <Button variant="secondary" size="icon" asChild>
-              <a href="mailto:anujithsaec@gmail.com" aria-label="Email">
-                <Mail className="h-5 w-5" />
-              </a>
-            </Button>
-            <Button variant="secondary" size="icon" asChild>
-              <a href="tel:+919538141670" aria-label="Phone">
-                <Phone className="h-5 w-5" />
-              </a>
-            </Button>
-            <Button variant="secondary" size="icon" asChild>
-              <a 
-                href="https://www.linkedin.com/in/anujith-j-nair-b857a0282/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </Button>
+      <footer className="py-8 px-4 border-t">
+        <div className="container mx-auto max-w-4xl">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex gap-4">
+              <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform">
+                <a href="mailto:anujithsaec@gmail.com" aria-label="Email">
+                  <Mail className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform">
+                <a href="tel:+919538141670" aria-label="Phone">
+                  <Phone className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform">
+                <a 
+                  href="https://www.linkedin.com/in/anujith-j-nair-b857a0282/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </Button>
+            </div>
+            <p className="text-muted-foreground text-sm">
+              © 2025 Anujith J Nair. All rights reserved.
+            </p>
           </div>
-          <p className="mt-6 text-sm opacity-80">© 2025 Anujith J Nair. All rights reserved.</p>
         </div>
       </footer>
     </div>
