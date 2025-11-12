@@ -2,7 +2,6 @@ import { Mail, Phone, Linkedin, Github, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import profileImage from "@/assets/profile.jpg";
 import Navigation from "@/components/Navigation";
 import ContactForm from "@/components/ContactForm";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -30,7 +29,7 @@ const Index = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
             <img 
-              src={profileImage} 
+              src="https://ik.imagekit.io/klmq2das2/Screenshot%202025-11-12%20163117.png?updatedAt=1762954206257" 
               alt="Anujith J Nair - Java Full Stack Developer" 
               className="w-48 h-48 rounded-full object-cover border-4 border-primary-foreground shadow-2xl bounce-in"
             />
