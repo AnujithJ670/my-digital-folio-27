@@ -2,43 +2,28 @@ import { Mail, Phone, Linkedin, Github, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import profileImage from "@/assets/profile.jpg";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="gradient-hero py-20 px-4 text-primary-foreground">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 animate-fade-in">
-            Anujith J Nair
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90">
-            Java Full Stack Developer
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Button variant="secondary" size="lg" asChild>
-              <a href="tel:+919538141670" className="flex items-center gap-2">
-                <Phone className="h-4 w-4" />
-                +91 9538141670
-              </a>
-            </Button>
-            <Button variant="secondary" size="lg" asChild>
-              <a href="mailto:anujithsaec@gmail.com" className="flex items-center gap-2">
-                <Mail className="h-4 w-4" />
-                Email Me
-              </a>
-            </Button>
-            <Button variant="secondary" size="lg" asChild>
-              <a 
-                href="https://www.linkedin.com/in/anujith-j-nair-b857a0282/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <Linkedin className="h-4 w-4" />
-                LinkedIn
-              </a>
-            </Button>
+        <div className="container mx-auto max-w-4xl">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+            <img 
+              src={profileImage} 
+              alt="Anujith J Nair" 
+              className="w-40 h-40 rounded-full object-cover border-4 border-primary-foreground shadow-lg"
+            />
+            <div className="text-center md:text-left">
+              <h1 className="text-5xl md:text-6xl font-bold mb-4 animate-fade-in">
+                Anujith J Nair
+              </h1>
+              <p className="text-xl md:text-2xl opacity-90">
+                Java Full Stack Developer
+              </p>
+            </div>
           </div>
         </div>
       </section>
