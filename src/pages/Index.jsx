@@ -86,7 +86,7 @@ const Index = () => {
       <section id="experience" className="py-16 px-4">
         <div 
           ref={experienceAnimation.ref}
-          className={`container mx-auto transition-all duration-1000 delay-200 ${
+          className={`container mx-auto transition-all duration-1000 ${
             experienceAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -95,38 +95,30 @@ const Index = () => {
             Experience
           </h2>
           <div className="space-y-6">
-            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-primary/50">
+            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-slide-in-left">
               <CardHeader>
-                <CardTitle className="flex items-start justify-between flex-wrap gap-2">
-                  <span>Data Analyst</span>
-                  <Badge variant="secondary" className="hover:scale-110 transition-transform">2022 - Present</Badge>
-                </CardTitle>
-                <CardDescription>Tech Solutions Inc.</CardDescription>
+                <CardTitle>Senior Data Analyst</CardTitle>
+                <CardDescription>Tech Corp Inc. | 2021 - Present</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  <li>Developed and maintained interactive dashboards using Tableau and Power BI</li>
-                  <li>Performed statistical analysis on large datasets using Python and R</li>
-                  <li>Automated data collection and reporting processes, reducing manual work by 60%</li>
-                  <li>Collaborated with cross-functional teams to identify business requirements</li>
+                  <li>Led data analysis initiatives resulting in 25% improvement in operational efficiency</li>
+                  <li>Developed automated reporting systems using Python and SQL</li>
+                  <li>Collaborated with cross-functional teams to implement data-driven strategies</li>
                 </ul>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-primary/50">
+            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-slide-in-right stagger-1">
               <CardHeader>
-                <CardTitle className="flex items-start justify-between flex-wrap gap-2">
-                  <span>Junior Data Analyst</span>
-                  <Badge variant="secondary" className="hover:scale-110 transition-transform">2020 - 2022</Badge>
-                </CardTitle>
-                <CardDescription>DataMetrics Solutions</CardDescription>
+                <CardTitle>Data Analyst</CardTitle>
+                <CardDescription>Analytics Solutions Ltd. | 2019 - 2021</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  <li>Assisted in data cleaning and preprocessing for machine learning models</li>
-                  <li>Created SQL queries to extract and analyze business metrics</li>
-                  <li>Contributed to the development of predictive models for customer behavior</li>
-                  <li>Prepared comprehensive reports for stakeholder presentations</li>
+                  <li>Performed complex statistical analyses on large datasets</li>
+                  <li>Created interactive dashboards using Tableau and Power BI</li>
+                  <li>Provided actionable insights to stakeholders through data visualization</li>
                 </ul>
               </CardContent>
             </Card>
@@ -138,7 +130,7 @@ const Index = () => {
       <section id="projects" className="py-16 px-4 bg-muted/30">
         <div 
           ref={projectsAnimation.ref}
-          className={`container mx-auto transition-all duration-1000 delay-300 ${
+          className={`container mx-auto transition-all duration-1000 ${
             projectsAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -147,78 +139,74 @@ const Index = () => {
             Projects
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-primary/50">
+            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in-up">
               <CardHeader>
-                <CardTitle>Customer Churn Prediction</CardTitle>
+                <CardTitle>Sales Forecasting Model</CardTitle>
                 <CardDescription>Machine Learning Project</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Developed a machine learning model to predict customer churn with 85% accuracy using Python, 
-                  scikit-learn, and XGBoost. Implemented feature engineering and hyperparameter tuning.
+                  Developed a predictive model using Python and scikit-learn to forecast sales trends with 92% accuracy.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Badge className="hover:scale-110 transition-transform">Python</Badge>
-                  <Badge className="hover:scale-110 transition-transform">scikit-learn</Badge>
-                  <Badge className="hover:scale-110 transition-transform">XGBoost</Badge>
-                  <Badge className="hover:scale-110 transition-transform">Pandas</Badge>
+                  <Badge>Python</Badge>
+                  <Badge>Pandas</Badge>
+                  <Badge>Scikit-learn</Badge>
+                  <Badge>Matplotlib</Badge>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-primary/50">
+            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in-up stagger-1">
               <CardHeader>
-                <CardTitle>Sales Analytics Dashboard</CardTitle>
-                <CardDescription>Business Intelligence</CardDescription>
+                <CardTitle>Customer Segmentation Analysis</CardTitle>
+                <CardDescription>Data Science Project</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Created an interactive sales dashboard in Tableau connecting to SQL databases, providing 
-                  real-time insights and KPI tracking for executive decision-making.
+                  Implemented clustering algorithms to segment customers based on behavior patterns and demographics.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Badge className="hover:scale-110 transition-transform">Tableau</Badge>
-                  <Badge className="hover:scale-110 transition-transform">SQL</Badge>
-                  <Badge className="hover:scale-110 transition-transform">ETL</Badge>
-                  <Badge className="hover:scale-110 transition-transform">Data Visualization</Badge>
+                  <Badge>Python</Badge>
+                  <Badge>K-means</Badge>
+                  <Badge>SQL</Badge>
+                  <Badge>Tableau</Badge>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-primary/50">
+            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in-up stagger-2">
               <CardHeader>
-                <CardTitle>Web Scraping Automation</CardTitle>
-                <CardDescription>Python Automation</CardDescription>
+                <CardTitle>Real-time Dashboard</CardTitle>
+                <CardDescription>Business Intelligence Project</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Built an automated web scraping tool using Python and Beautiful Soup to collect and analyze 
-                  market data from multiple sources, saving 20+ hours of manual work weekly.
+                  Created an interactive dashboard for monitoring key business metrics in real-time.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Badge className="hover:scale-110 transition-transform">Python</Badge>
-                  <Badge className="hover:scale-110 transition-transform">BeautifulSoup</Badge>
-                  <Badge className="hover:scale-110 transition-transform">Selenium</Badge>
-                  <Badge className="hover:scale-110 transition-transform">Automation</Badge>
+                  <Badge>Power BI</Badge>
+                  <Badge>SQL</Badge>
+                  <Badge>DAX</Badge>
+                  <Badge>Azure</Badge>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-primary/50">
+            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in-up stagger-3">
               <CardHeader>
-                <CardTitle>Financial Data Analysis</CardTitle>
-                <CardDescription>Statistical Analysis</CardDescription>
+                <CardTitle>ETL Pipeline</CardTitle>
+                <CardDescription>Data Engineering Project</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Performed comprehensive financial data analysis using Excel and Python, identifying cost-saving 
-                  opportunities and revenue optimization strategies resulting in 15% improvement in profit margins.
+                  Built an automated ETL pipeline to process and transform data from multiple sources.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Badge className="hover:scale-110 transition-transform">Excel</Badge>
-                  <Badge className="hover:scale-110 transition-transform">Python</Badge>
-                  <Badge className="hover:scale-110 transition-transform">Statistics</Badge>
-                  <Badge className="hover:scale-110 transition-transform">Financial Modeling</Badge>
+                  <Badge>Python</Badge>
+                  <Badge>Apache Airflow</Badge>
+                  <Badge>PostgreSQL</Badge>
+                  <Badge>Docker</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -230,7 +218,7 @@ const Index = () => {
       <section id="education" className="py-16 px-4">
         <div 
           ref={educationAnimation.ref}
-          className={`container mx-auto transition-all duration-1000 delay-100 ${
+          className={`container mx-auto transition-all duration-1000 ${
             educationAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -238,21 +226,31 @@ const Index = () => {
             <GraduationCap className="h-8 w-8" />
             Education
           </h2>
-          <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-primary/50">
-            <CardHeader>
-              <CardTitle className="flex items-start justify-between flex-wrap gap-2">
-                <span>Bachelor of Science in Data Science</span>
-                <Badge variant="secondary" className="hover:scale-110 transition-transform">2016 - 2020</Badge>
-              </CardTitle>
-              <CardDescription>University of Technology</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Specialized in Statistical Analysis, Machine Learning, and Database Management. 
-                GPA: 3.8/4.0. Completed thesis on "Predictive Analytics in E-commerce."
-              </p>
-            </CardContent>
-          </Card>
+          <div className="space-y-6 max-w-3xl mx-auto">
+            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-bounce-in">
+              <CardHeader>
+                <CardTitle>Master of Science in Data Science</CardTitle>
+                <CardDescription>University of Technology | 2017 - 2019</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Specialized in Machine Learning and Statistical Analysis. Thesis on Predictive Analytics in Healthcare.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-bounce-in stagger-1">
+              <CardHeader>
+                <CardTitle>Bachelor of Science in Computer Science</CardTitle>
+                <CardDescription>State University | 2013 - 2017</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Focus on Database Systems and Programming. Graduated with Honors.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
@@ -260,45 +258,93 @@ const Index = () => {
       <section id="skills" className="py-16 px-4 bg-muted/30">
         <div 
           ref={skillsAnimation.ref}
-          className={`container mx-auto transition-all duration-1000 delay-200 ${
+          className={`container mx-auto transition-all duration-1000 ${
             skillsAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           <h2 className="text-3xl font-bold mb-8 text-center">Technical Skills</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.05] hover:border-primary/50">
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.05] animate-fade-in-up">
               <CardHeader>
-                <CardTitle>Programming Languages</CardTitle>
+                <CardTitle className="text-lg">Programming Languages</CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-wrap gap-2">
-                <Badge className="hover:scale-110 transition-transform">Python</Badge>
-                <Badge className="hover:scale-110 transition-transform">SQL</Badge>
-                <Badge className="hover:scale-110 transition-transform">R</Badge>
-                <Badge className="hover:scale-110 transition-transform">JavaScript</Badge>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary">Python</Badge>
+                  <Badge variant="secondary">SQL</Badge>
+                  <Badge variant="secondary">R</Badge>
+                  <Badge variant="secondary">JavaScript</Badge>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.05] hover:border-primary/50">
+            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.05] animate-fade-in-up stagger-1">
               <CardHeader>
-                <CardTitle>Data Tools</CardTitle>
+                <CardTitle className="text-lg">Data Analysis Tools</CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-wrap gap-2">
-                <Badge className="hover:scale-110 transition-transform">Tableau</Badge>
-                <Badge className="hover:scale-110 transition-transform">Power BI</Badge>
-                <Badge className="hover:scale-110 transition-transform">Excel</Badge>
-                <Badge className="hover:scale-110 transition-transform">Google Analytics</Badge>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary">Pandas</Badge>
+                  <Badge variant="secondary">NumPy</Badge>
+                  <Badge variant="secondary">Matplotlib</Badge>
+                  <Badge variant="secondary">Seaborn</Badge>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.05] hover:border-primary/50">
+            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.05] animate-fade-in-up stagger-2">
               <CardHeader>
-                <CardTitle>Libraries & Frameworks</CardTitle>
+                <CardTitle className="text-lg">BI & Visualization</CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-wrap gap-2">
-                <Badge className="hover:scale-110 transition-transform">Pandas</Badge>
-                <Badge className="hover:scale-110 transition-transform">NumPy</Badge>
-                <Badge className="hover:scale-110 transition-transform">scikit-learn</Badge>
-                <Badge className="hover:scale-110 transition-transform">TensorFlow</Badge>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary">Tableau</Badge>
+                  <Badge variant="secondary">Power BI</Badge>
+                  <Badge variant="secondary">Looker</Badge>
+                  <Badge variant="secondary">Excel</Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.05] animate-fade-in-up stagger-3">
+              <CardHeader>
+                <CardTitle className="text-lg">Machine Learning</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary">Scikit-learn</Badge>
+                  <Badge variant="secondary">TensorFlow</Badge>
+                  <Badge variant="secondary">PyTorch</Badge>
+                  <Badge variant="secondary">Keras</Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.05] animate-fade-in-up stagger-4">
+              <CardHeader>
+                <CardTitle className="text-lg">Databases</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary">PostgreSQL</Badge>
+                  <Badge variant="secondary">MySQL</Badge>
+                  <Badge variant="secondary">MongoDB</Badge>
+                  <Badge variant="secondary">Redis</Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.05] animate-fade-in-up stagger-5">
+              <CardHeader>
+                <CardTitle className="text-lg">Cloud & DevOps</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary">AWS</Badge>
+                  <Badge variant="secondary">Azure</Badge>
+                  <Badge variant="secondary">Docker</Badge>
+                  <Badge variant="secondary">Git</Badge>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -309,30 +355,17 @@ const Index = () => {
       <section id="contact" className="py-16 px-4">
         <div 
           ref={contactAnimation.ref}
-          className={`container mx-auto transition-all duration-1000 delay-300 ${
+          className={`container mx-auto transition-all duration-1000 ${
             contactAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h2 className="text-3xl font-bold mb-8 text-center flex items-center justify-center gap-2">
-            <Mail className="h-8 w-8" />
-            Get In Touch
-          </h2>
-          <Card className="hover:shadow-xl transition-all duration-300">
-            <CardHeader>
-              <CardTitle>Send Me a Message</CardTitle>
-              <CardDescription>
-                I'm always interested in hearing about new opportunities and projects.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ContactForm />
-            </CardContent>
-          </Card>
+          <h2 className="text-3xl font-bold mb-8 text-center">Get In Touch</h2>
+          <ContactForm />
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 bg-muted/50 text-center">
+      <footer className="py-8 px-4 bg-muted/30 text-center">
         <p className="text-muted-foreground">
           © 2024 Anujith J Nair. All rights reserved.
         </p>
