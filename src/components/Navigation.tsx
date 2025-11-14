@@ -23,7 +23,7 @@ const Navigation = () => {
     { href: "#contact", label: "Contact" },
   ];
 
-  const scrollToSection = (e, href) => {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
